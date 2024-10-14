@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
+import { FilterationProvider } from "./context/FilterationContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,7 +23,9 @@ createRoot(document.getElementById("root")).render(
       theme="light"
     />
     <Provider store={store}>
-      <App />
+      <FilterationProvider>
+        <App />
+      </FilterationProvider>
     </Provider>
   </StrictMode>
 );

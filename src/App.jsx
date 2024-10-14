@@ -1,13 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/common/Header";
-import Countries from "./components/countries/Countries";
-import Filteration from "./components/filteration/Filteration";
+import CountriesPage from "./pages/CountriesPage/CountriesPage";
+import CountryPage from "./pages/CountryPage/CountryPage";
+import Header from "./components/Header/Header";
 function App() {
   return (
-    <div className="bg-light-primary dark:bg-dark-primary">
+    <div className="bg-light-primary dark:bg-dark-primary min-h-[100vh]">
       <Header />
-      <Filteration />
-      <Countries />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CountriesPage />} />
+          <Route path="/country/:countryName" element={<CountryPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

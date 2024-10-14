@@ -1,5 +1,5 @@
 // src/features/dataSlice.js
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchCountriesData } from "../actions/Actions";
 
 const countriesSlice = createSlice({
